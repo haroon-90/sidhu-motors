@@ -43,11 +43,11 @@ export default function LoginPage() {
             <div className="w-full max-w-md">
                 <div className="card">
                     <div className="text-center mb-8">
-                        <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] flex items-center justify-center">
+                        <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-linear-to-br from-[--primary] to-[--secondary] flex items-center justify-center">
                             <LogIn className="w-8 h-8 text-white" />
                         </div>
                         <h1 className="text-3xl font-bold mb-2">Welcome Back</h1>
-                        <p className="text-[var(--text-secondary)]">Login to access your account</p>
+                        <p className="text-(--text-secondary)">Login to access your account</p>
                     </div>
 
                     {error && (
@@ -88,20 +88,20 @@ export default function LoginPage() {
                         </button>
                     </form>
 
-                    <p className="mt-6 text-center text-[var(--text-secondary)]">
+                    <p className="mt-6 text-center text-(--text-secondary)">
                         Don't have an account?{' '}
-                        <Link href="/register" className="text-[var(--primary)] hover:underline font-medium">
+                        <Link href="/register" className="text-(--primary) hover:underline font-medium">
                             Sign up
                         </Link>
                     </p>
 
-                    <div className="mt-4 p-4 rounded-lg bg-[var(--bg-elevated)] text-sm">
+                    <div className="mt-4 p-4 rounded-lg bg-(--bg-elevated) text-sm">
                         <p className="font-semibold mb-2">Demo Credentials:</p>
-                        <p className="text-[var(--text-secondary)]">
-                            User: <span className="text-[var(--text-primary)]">john@example.com</span> / userpassword
+                        <p className="text-(--text-secondary)">
+                            User: <span className="text-(--text-primary)">john@example.com</span> / userpassword
                         </p>
-                        <p className="text-[var(--text-secondary)]">
-                            Admin: <span className="text-[var(--text-primary)]">admin@sidhumotors.com</span> / adminpassword
+                        <p className="text-(--text-secondary)">
+                            Admin: <span className="text-(--text-primary)">admin@sidhumotors.com</span> / adminpassword
                         </p>
                     </div>
                 </div>

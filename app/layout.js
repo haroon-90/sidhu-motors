@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="antialiased">
         <Navbar />
-        <main className="min-h-screen m-10">
+        <main className="min-h-screen">
           {children}
         </main>
         <Footer />

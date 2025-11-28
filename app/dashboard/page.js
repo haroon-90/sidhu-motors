@@ -41,7 +41,7 @@ export default function DashboardPage() {
     if (loading) {
         return (
             <div className="flex justify-center items-center min-h-[60vh]">
-                <Loader className="w-8 h-8 animate-spin text-[var(--primary)]" />
+                <Loader className="w-8 h-8 animate-spin text-(--primary)" />
             </div>
         );
     }
@@ -51,7 +51,7 @@ export default function DashboardPage() {
             {/* Header */}
             <div className="mb-12">
                 <h1 className="text-4xl font-bold mb-2">My Dashboard</h1>
-                <p className="text-xl text-[var(--text-secondary)]">
+                <p className="text-xl text-(--text-secondary)">
                     Welcome back, {user?.name}!
                 </p>
             </div>
@@ -60,7 +60,7 @@ export default function DashboardPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 <div className="card">
                     <h3 className="text-lg font-semibold mb-2">Account Details</h3>
-                    <div className="space-y-2 text-[var(--text-secondary)]">
+                    <div className="space-y-2 text-(--text-secondary)">
                         <p><span className="font-medium">Name:</span> {user?.name}</p>
                         <p><span className="font-medium">Email:</span> {user?.email}</p>
                         <p><span className="font-medium">Phone:</span> {user?.phone}</p>
@@ -70,26 +70,26 @@ export default function DashboardPage() {
 
                 <div className="card">
                     <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full bg-linear-to-br from-(--primary) to-(--secondary) flex items-center justify-center">
                             <Package className="w-6 h-6 text-white" />
                         </div>
                         <div>
                             <p className="text-3xl font-bold">{bookings.length}</p>
-                            <p className="text-[var(--text-secondary)]">Total Bookings</p>
+                            <p className="text-(--text-secondary)">Total Bookings</p>
                         </div>
                     </div>
                 </div>
 
                 <div className="card">
                     <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full bg-linear-to-br from-(--primary) to-(--secondary) flex items-center justify-center">
                             <Calendar className="w-6 h-6 text-white" />
                         </div>
                         <div>
                             <p className="text-3xl font-bold">
                                 {bookings.filter(b => b.status === 'confirmed').length}
                             </p>
-                            <p className="text-[var(--text-secondary)]">Active Bookings</p>
+                            <p className="text-(--text-secondary)">Active Bookings</p>
                         </div>
                     </div>
                 </div>
@@ -104,13 +104,13 @@ export default function DashboardPage() {
                         {bookings.map((booking) => (
                             <div
                                 key={booking._id}
-                                className="flex flex-col md:flex-row justify-between items-start md:items-center p-4 rounded-lg bg-[var(--bg-elevated)] border border-[var(--border)] hover:border-[var(--border-hover)] transition-colors"
+                                className="flex flex-col md:flex-row justify-between items-start md:items-center p-4 rounded-lg bg-(--bg-elevated) border border-[--border] hover:border-[--border-hover] transition-colors"
                             >
                                 <div className="flex-1">
                                     <h3 className="text-lg font-semibold mb-2">
                                         {booking.carId?.make} {booking.carId?.model}
                                     </h3>
-                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-sm text-[var(--text-secondary)]">
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-sm text-(--text-secondary)">
                                         <p>
                                             <span className="font-medium">From:</span>{' '}
                                             {new Date(booking.startDate).toLocaleDateString()}
@@ -129,12 +129,12 @@ export default function DashboardPage() {
                                 <div className="mt-4 md:mt-0">
                                     <span
                                         className={`px-4 py-2 rounded-full text-sm font-medium ${booking.status === 'confirmed'
-                                                ? 'bg-green-500/20 text-green-400'
-                                                : booking.status === 'pending'
-                                                    ? 'bg-yellow-500/20 text-yellow-400'
-                                                    : booking.status === 'completed'
-                                                        ? 'bg-blue-500/20 text-blue-400'
-                                                        : 'bg-red-500/20 text-red-400'
+                                            ? 'bg-green-500/20 text-green-400'
+                                            : booking.status === 'pending'
+                                                ? 'bg-yellow-500/20 text-yellow-400'
+                                                : booking.status === 'completed'
+                                                    ? 'bg-blue-500/20 text-blue-400'
+                                                    : 'bg-red-500/20 text-red-400'
                                             }`}
                                     >
                                         {booking.status.charAt(0).toUpperCase() + booking.status.slice(1)}
@@ -145,8 +145,8 @@ export default function DashboardPage() {
                     </div>
                 ) : (
                     <div className="text-center py-12">
-                        <Package className="w-16 h-16 mx-auto mb-4 text-[var(--text-muted)]" />
-                        <p className="text-xl text-[var(--text-muted)] mb-4">No bookings yet</p>
+                        <Package className="w-16 h-16 mx-auto mb-4 text-(--text-muted)" />
+                        <p className="text-xl text-(--text-muted) mb-4">No bookings yet</p>
                         <a href="/cars" className="btn btn-primary">
                             Browse Cars
                         </a>

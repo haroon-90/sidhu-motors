@@ -21,7 +21,7 @@ export default async function Home() {
   const featuredCars = await getFeaturedCars();
 
   return (
-    <div className="min-h-screen p-10">
+    <div className="min-h-screen p-10 w-full flex flex-col gap-4 justify-center">
       {/* Hero Section */}
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -37,7 +37,7 @@ export default async function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative flex flex-col gap-8 z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
             Drive Your Dream Car
             <br />
@@ -129,7 +129,7 @@ export default async function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 mx-auto">
+      <section className="py-20 px-4 mx-10 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto card text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-linear-to-br from-(--primary) to-(--secondary) opacity-10"></div>
           <div className="relative z-10 py-12">

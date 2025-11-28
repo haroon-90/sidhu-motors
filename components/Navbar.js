@@ -46,12 +46,12 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className="glass sticky top-0 z-50 border-b border-[var(--border)]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav className="glass sticky bg-black/50 backdrop-blur-lg top-0 z-50 border-b border-(--border)">
+            <div className="max-w-7xl mx-auto px-40 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 group">
-                        <Car className="w-8 h-8 text-[var(--primary)] transition-transform group-hover:scale-110" />
+                        <Car className="w-8 h-8 text-(--primary) transition-transform group-hover:scale-110" />
                         <span className="text-xl font-bold gradient-text">SIDHU Motors</span>
                     </Link>
 
@@ -61,7 +61,7 @@ export default function Navbar() {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className={`text-sm font-medium transition-colors hover:text-[var(--primary)] ${pathname === link.href ? 'text-[var(--primary)]' : 'text-[var(--text-secondary)]'
+                                className={`text-sm font-medium transition-colors hover:text-(--primary) ${pathname === link.href ? 'text-(--primary)' : 'text-(--text-secondary)'
                                     }`}
                             >
                                 {link.label}
@@ -75,7 +75,7 @@ export default function Navbar() {
                             <div className="loading"></div>
                         ) : user ? (
                             <div className="flex items-center gap-3">
-                                <Link href="/dashboard" className="flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--primary)] transition-colors">
+                                <Link href="/dashboard" className="flex items-center gap-2 text-(--text-secondary) hover:text-(--primary) transition-colors">
                                     <User className="w-5 h-5" />
                                     <span className="text-sm font-medium">{user.name}</span>
                                 </Link>
@@ -84,7 +84,7 @@ export default function Navbar() {
                                         Admin
                                     </Link>
                                 )}
-                                <button onClick={handleLogout} className="flex items-center gap-2 text-[var(--text-muted)] hover:text-red-500 transition-colors">
+                                <button onClick={handleLogout} className="flex items-center gap-2 text-(--text-muted) hover:text-red-500 transition-colors">
                                     <LogOut className="w-5 h-5" />
                                 </button>
                             </div>
@@ -103,7 +103,7 @@ export default function Navbar() {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="md:hidden text-[var(--text-primary)]"
+                        className="md:hidden text-(--text-primary)"
                     >
                         {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                     </button>
@@ -111,13 +111,13 @@ export default function Navbar() {
 
                 {/* Mobile Menu */}
                 {mobileMenuOpen && (
-                    <div className="md:hidden py-4 border-t border-[var(--border)]">
+                    <div className="md:hidden py-4 border-t border-(--border)">
                         <div className="flex flex-col gap-4">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.href}
                                     href={link.href}
-                                    className={`text-sm font-medium transition-colors hover:text-[var(--primary)] ${pathname === link.href ? 'text-[var(--primary)]' : 'text-[var(--text-secondary)]'
+                                    className={`text-sm font-medium transition-colors hover:text-(--primary) ${pathname === link.href ? 'text-(--primary)' : 'text-(--text-secondary)'
                                         }`}
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
@@ -126,7 +126,7 @@ export default function Navbar() {
                             ))}
                             {user ? (
                                 <>
-                                    <div className="text-sm text-[var(--text-secondary)]">Welcome, {user.name}</div>
+                                    <div className="text-sm text-(--text-secondary)">Welcome, {user.name}</div>
                                     {user.role === 'admin' && (
                                         <Link href="/admin" className="btn btn-secondary text-sm">
                                             Admin Dashboard

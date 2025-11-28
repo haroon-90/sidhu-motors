@@ -43,7 +43,7 @@ export default function CarsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="mb-12">
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">Browse Our Fleet</h1>
-                <p className="text-xl text-[var(--text-secondary)]">
+                <p className="text-xl text-(--text-secondary)">
                     Find the perfect car for your journey
                 </p>
             </div>
@@ -51,7 +51,7 @@ export default function CarsPage() {
             {/* Filters */}
             <div className="card mb-8">
                 <div className="flex items-center gap-2 mb-4">
-                    <Filter className="w-5 h-5 text-[var(--primary)]" />
+                    <Filter className="w-5 h-5 text-(--primary)" />
                     <h2 className="text-xl font-semibold">Filters</h2>
                 </div>
 
@@ -110,7 +110,7 @@ export default function CarsPage() {
             {/* Cars Grid */}
             {loading ? (
                 <div className="flex justify-center items-center py-20">
-                    <Loader className="w-8 h-8 animate-spin text-[var(--primary)]" />
+                    <Loader className="w-8 h-8 animate-spin text-(--primary)" />
                 </div>
             ) : cars.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -120,7 +120,7 @@ export default function CarsPage() {
                 </div>
             ) : (
                 <div className="text-center py-20">
-                    <p className="text-xl text-[var(--text-muted)]">No cars found matching your filters.</p>
+                    <p className="text-xl text-(--text-muted)">No cars found matching your filters.</p>
                     <button
                         onClick={() => setFilters({ location: '', transmission: '', minPrice: '', maxPrice: '' })}
                         className="btn btn-primary mt-4"
