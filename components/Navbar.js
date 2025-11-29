@@ -46,13 +46,13 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className="glass sticky bg-black/50 backdrop-blur-lg top-0 z-50 border-b border-(--border)">
-            <div className="max-w-7xl mx-auto px-40 sm:px-6 lg:px-8">
+        <nav className="sticky top-0 z-50 bg-bg-card/60 backdrop-blur-xl border-b border-white/10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 group">
-                        <Car className="w-8 h-8 text-(--primary) transition-transform group-hover:scale-110" />
-                        <span className="text-xl font-bold gradient-text">SIDHU Motors</span>
+                        <Car className="w-8 h-8 text-primary transition-transform group-hover:scale-110" />
+                        <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">SIDHU Motors</span>
                     </Link>
 
                     {/* Desktop Navigation */}
@@ -61,7 +61,7 @@ export default function Navbar() {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className={`text-sm font-medium transition-colors hover:text-(--primary) ${pathname === link.href ? 'text-(--primary)' : 'text-(--text-secondary)'
+                                className={`text-sm font-medium transition-colors hover:text-primary ${pathname === link.href ? 'text-primary' : 'text-text-secondary'
                                     }`}
                             >
                                 {link.label}
@@ -72,28 +72,28 @@ export default function Navbar() {
                     {/* Auth Buttons */}
                     <div className="hidden md:flex items-center gap-4">
                         {loading ? (
-                            <div className="loading"></div>
+                            <div className="inline-block w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                         ) : user ? (
                             <div className="flex items-center gap-3">
-                                <Link href="/dashboard" className="flex items-center gap-2 text-(--text-secondary) hover:text-(--primary) transition-colors">
+                                <Link href="/dashboard" className="flex items-center gap-2 text-text-secondary hover:text-primary transition-colors">
                                     <User className="w-5 h-5" />
                                     <span className="text-sm font-medium">{user.name}</span>
                                 </Link>
                                 {user.role === 'admin' && (
-                                    <Link href="/admin" className="btn btn-secondary text-sm px-4 py-2">
+                                    <Link href="/admin" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl font-semibold transition-all duration-300 bg-bg-elevated text-text-primary border border-border hover:bg-bg-card hover:border-border-hover text-sm">
                                         Admin
                                     </Link>
                                 )}
-                                <button onClick={handleLogout} className="flex items-center gap-2 text-(--text-muted) hover:text-red-500 transition-colors">
+                                <button onClick={handleLogout} className="flex items-center gap-2 text-text-muted hover:text-red-500 transition-colors">
                                     <LogOut className="w-5 h-5" />
                                 </button>
                             </div>
                         ) : (
                             <>
-                                <Link href="/login" className="btn btn-secondary text-sm px-4 py-2">
+                                <Link href="/login" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl font-semibold transition-all duration-300 bg-bg-elevated text-text-primary border border-border hover:bg-bg-card hover:border-border-hover text-sm">
                                     Login
                                 </Link>
-                                <Link href="/register" className="btn btn-primary text-sm px-4 py-2">
+                                <Link href="/register" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/40 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/60 text-sm">
                                     Sign Up
                                 </Link>
                             </>
@@ -103,7 +103,7 @@ export default function Navbar() {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="md:hidden text-(--text-primary)"
+                        className="md:hidden text-text-primary"
                     >
                         {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                     </button>
@@ -111,13 +111,13 @@ export default function Navbar() {
 
                 {/* Mobile Menu */}
                 {mobileMenuOpen && (
-                    <div className="md:hidden py-4 border-t border-(--border)">
+                    <div className="md:hidden py-4 border-t border-border">
                         <div className="flex flex-col gap-4">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.href}
                                     href={link.href}
-                                    className={`text-sm font-medium transition-colors hover:text-(--primary) ${pathname === link.href ? 'text-(--primary)' : 'text-(--text-secondary)'
+                                    className={`text-sm font-medium transition-colors hover:text-primary ${pathname === link.href ? 'text-primary' : 'text-text-secondary'
                                         }`}
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
@@ -126,22 +126,22 @@ export default function Navbar() {
                             ))}
                             {user ? (
                                 <>
-                                    <div className="text-sm text-(--text-secondary)">Welcome, {user.name}</div>
+                                    <div className="text-sm text-text-secondary">Welcome, {user.name}</div>
                                     {user.role === 'admin' && (
-                                        <Link href="/admin" className="btn btn-secondary text-sm">
+                                        <Link href="/admin" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl font-semibold transition-all duration-300 bg-bg-elevated text-text-primary border border-border hover:bg-bg-card hover:border-border-hover text-sm">
                                             Admin Dashboard
                                         </Link>
                                     )}
-                                    <button onClick={handleLogout} className="btn btn-secondary text-sm">
+                                    <button onClick={handleLogout} className="inline-flex items-center gap-2 px-4 py-2 rounded-xl font-semibold transition-all duration-300 bg-bg-elevated text-text-primary border border-border hover:bg-bg-card hover:border-border-hover text-sm">
                                         Logout
                                     </button>
                                 </>
                             ) : (
                                 <>
-                                    <Link href="/login" className="btn btn-secondary text-sm">
+                                    <Link href="/login" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl font-semibold transition-all duration-300 bg-bg-elevated text-text-primary border border-border hover:bg-bg-card hover:border-border-hover text-sm">
                                         Login
                                     </Link>
-                                    <Link href="/register" className="btn btn-primary text-sm">
+                                    <Link href="/register" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/40 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/60 text-sm">
                                         Sign Up
                                     </Link>
                                 </>

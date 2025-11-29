@@ -41,7 +41,7 @@ export default function DashboardPage() {
     if (loading) {
         return (
             <div className="flex justify-center items-center min-h-[60vh]">
-                <Loader className="w-8 h-8 animate-spin text-(--primary)" />
+                <Loader className="w-8 h-8 animate-spin text-primary" />
             </div>
         );
     }
@@ -51,16 +51,16 @@ export default function DashboardPage() {
             {/* Header */}
             <div className="mb-12">
                 <h1 className="text-4xl font-bold mb-2">My Dashboard</h1>
-                <p className="text-xl text-(--text-secondary)">
+                <p className="text-xl text-text-secondary">
                     Welcome back, {user?.name}!
                 </p>
             </div>
 
             {/* User Info */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <div className="card">
+                <div className="bg-bg-card rounded-2xl border border-border p-6 transition-all duration-300 hover:border-border-hover hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30">
                     <h3 className="text-lg font-semibold mb-2">Account Details</h3>
-                    <div className="space-y-2 text-(--text-secondary)">
+                    <div className="space-y-2 text-text-secondary">
                         <p><span className="font-medium">Name:</span> {user?.name}</p>
                         <p><span className="font-medium">Email:</span> {user?.email}</p>
                         <p><span className="font-medium">Phone:</span> {user?.phone}</p>
@@ -68,35 +68,35 @@ export default function DashboardPage() {
                     </div>
                 </div>
 
-                <div className="card">
+                <div className="bg-bg-card rounded-2xl border border-border p-6 transition-all duration-300 hover:border-border-hover hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30">
                     <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-linear-to-br from-(--primary) to-(--secondary) flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full bg-linear-to-br from-primary to-secondary flex items-center justify-center">
                             <Package className="w-6 h-6 text-white" />
                         </div>
                         <div>
                             <p className="text-3xl font-bold">{bookings.length}</p>
-                            <p className="text-(--text-secondary)">Total Bookings</p>
+                            <p className="text-text-secondary">Total Bookings</p>
                         </div>
                     </div>
                 </div>
 
-                <div className="card">
+                <div className="bg-bg-card rounded-2xl border border-border p-6 transition-all duration-300 hover:border-border-hover hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30">
                     <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-linear-to-br from-(--primary) to-(--secondary) flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full bg-linear-to-br from-primary to-secondary flex items-center justify-center">
                             <Calendar className="w-6 h-6 text-white" />
                         </div>
                         <div>
                             <p className="text-3xl font-bold">
                                 {bookings.filter(b => b.status === 'confirmed').length}
                             </p>
-                            <p className="text-(--text-secondary)">Active Bookings</p>
+                            <p className="text-text-secondary">Active Bookings</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             {/* Bookings List */}
-            <div className="card">
+            <div className="bg-bg-card rounded-2xl border border-border p-6 transition-all duration-300 hover:border-border-hover hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30">
                 <h2 className="text-2xl font-bold mb-6">My Bookings</h2>
 
                 {bookings.length > 0 ? (
@@ -104,13 +104,13 @@ export default function DashboardPage() {
                         {bookings.map((booking) => (
                             <div
                                 key={booking._id}
-                                className="flex flex-col md:flex-row justify-between items-start md:items-center p-4 rounded-lg bg-(--bg-elevated) border border-[--border] hover:border-[--border-hover] transition-colors"
+                                className="flex flex-col md:flex-row justify-between items-start md:items-center p-4 rounded-lg bg-bg-elevated border border-border hover:border-border-hover transition-colors"
                             >
                                 <div className="flex-1">
                                     <h3 className="text-lg font-semibold mb-2">
                                         {booking.carId?.make} {booking.carId?.model}
                                     </h3>
-                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-sm text-(--text-secondary)">
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-sm text-text-secondary">
                                         <p>
                                             <span className="font-medium">From:</span>{' '}
                                             {new Date(booking.startDate).toLocaleDateString()}
@@ -145,9 +145,9 @@ export default function DashboardPage() {
                     </div>
                 ) : (
                     <div className="text-center py-12">
-                        <Package className="w-16 h-16 mx-auto mb-4 text-(--text-muted)" />
-                        <p className="text-xl text-(--text-muted) mb-4">No bookings yet</p>
-                        <a href="/cars" className="btn btn-primary">
+                        <Package className="w-16 h-16 mx-auto mb-4 text-text-muted" />
+                        <p className="text-xl text-text-muted mb-4">No bookings yet</p>
+                        <a href="/cars" className="inline-flex items-center gap-2 px-8 py-3 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/40 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/60">
                             Browse Cars
                         </a>
                     </div>
