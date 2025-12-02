@@ -71,7 +71,7 @@ export default function CarCard({ car }) {
                     {/* Price */}
                     <div className="flex items-center justify-between pt-4 border-t border-white/5">
                         <div>
-                            <p className="text-2xl font-bold text-white">₹{car.dailyPrice.toLocaleString()}</p>
+                            <p className="text-2xl font-bold text-white">{car.dailyPrice.toLocaleString()} PKR</p>
                             <p className="text-xs text-slate-500">per day</p>
                         </div>
                         <div className={`px-3 py-1 rounded-full text-xs font-semibold border ${car.isAvailable

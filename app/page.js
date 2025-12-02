@@ -1,11 +1,10 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { ArrowRight, Star, Shield, Clock } from 'lucide-react';
 import CarCard from '@/components/CarCard';
 
 async function getFeaturedCars() {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api'}/cars?limit=3`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cars?limit=3`, {
             cache: 'no-store',
         });
         if (!res.ok) return [];

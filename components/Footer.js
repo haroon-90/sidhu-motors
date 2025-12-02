@@ -1,3 +1,4 @@
+import { CACHE_ONE_YEAR } from 'next/dist/lib/constants';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -11,9 +12,6 @@ export default function Footer() {
                         <h3 className="text-2xl font-bold text-white mb-4">SIDHU <span className="text-blue-500">Motors</span></h3>
                         <p className="text-slate-400 mb-6 max-w-sm leading-relaxed">
                             Your trusted partner for premium car rentals. Experience luxury and comfort with our curated fleet of vehicles.
-                        </p>
-                        <p className="text-sm text-center text-slate-600">
-                            © 2024 SIDHU Motors. All rights reserved.
                         </p>
                     </div>
 
@@ -49,7 +47,7 @@ export default function Footer() {
                             </li>
                             <li className="flex items-center gap-2">
                                 <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                                +91 99999 99999
+                                +92 300 1234567
                             </li>
                             <li className="flex items-center gap-2">
                                 <span className="w-2 h-2 rounded-full bg-green-500"></span>
@@ -57,6 +55,12 @@ export default function Footer() {
                             </li>
                         </ul>
                     </div>
+                </div>
+
+                <div className='pt-2 mt-2 border-t border-gray-800'>
+                    <p className="text-sm text-center text-slate-600">
+                        © {new Date().getFullYear()} SIDHU Motors. All rights reserved.
+                    </p>
                 </div>
             </div>
         </footer>
