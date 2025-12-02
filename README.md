@@ -6,9 +6,15 @@ A full-stack car rental web application built with Next.js 16, MongoDB, and Tail
 
 - **User Authentication**: JWT-based auth with httpOnly cookies
 - **Car Browsing**: Filter and search through available vehicles
-- **Booking System**: Book cars with automatic availability checking
+- **Car Details Page**: Interactive image gallery, comprehensive specifications, and real-time pricing
+- **Integrated Booking System**: 
+  - Book cars directly from the details page
+  - Automatic date validation and price calculation
+  - Real-time availability checking
+  - User-friendly booking form with error handling
 - **Admin Dashboard**: Manage fleet and bookings
-- **Responsive Design**: Premium dark theme with glassmorphism
+- **Responsive Design**: Premium dark theme with glassmorphism effects
+- **Image Gallery**: Navigate through car images with thumbnail preview
 - **Data Seeding**: Quick database population for development
 
 ## 🛠️ Tech Stack
@@ -205,7 +211,7 @@ This project is for educational purposes.
 
 ## 👨‍💻 Developer
 
-Built by SIDHU Motors Team
+Built by Muhammad Haroon Nawaz
 
 ---
 

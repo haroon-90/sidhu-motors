@@ -128,7 +128,7 @@ export default function DashboardPage() {
                                         </p>
                                         <p>
                                             <span className="text-slate-500">Total:</span>{' '}
-                                            <span className="text-white font-medium">₹{booking.totalPrice?.toLocaleString()}</span>
+                                            <span className="text-white font-medium">{booking.totalPrice?.toLocaleString()} PKR</span>
                                         </p>
                                     </div>
                                 </div>

@@ -1,4 +1,3 @@
-import { CACHE_ONE_YEAR } from 'next/dist/lib/constants';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -43,11 +42,11 @@ export default function Footer() {
                         <ul className="space-y-1 text-slate-400">
                             <li className="flex items-center gap-2">
                                 <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                                info@sidhumotors.com
+                                ahmedwaleed0708@gmail.com
                             </li>
                             <li className="flex items-center gap-2">
                                 <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                                +92 300 1234567
+                                +92 345 6881529
                             </li>
                             <li className="flex items-center gap-2">
                                 <span className="w-2 h-2 rounded-full bg-green-500"></span>
