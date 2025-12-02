@@ -111,8 +111,12 @@ export default function CarDetailPage() {
     return (
       <div className="min-h-screen bg-slate-950 flex items-center justify-center">
         <div className="text-center">
-          <div className="loading mb-4"></div>
-          <p className="text-slate-400">Loading car details...</p>
+          <div className="flex space-x-2">
+            {/* Three bouncing dots */}
+            <div className="w-6 h-6 bg-blue-500 rounded-full animate-bounce [animation-delay:0.1s]"></div>
+            <div className="w-6 h-6 bg-blue-500 rounded-full animate-bounce [animation-delay:0.2s]"></div>
+            <div className="w-6 h-6 bg-blue-500 rounded-full animate-bounce [animation-delay:0.3s]"></div>
+          </div>
         </div>
       </div>
     );
@@ -148,7 +152,7 @@ export default function CarDetailPage() {
           {/* Left Column - Images */}
           <div className="space-y-6">
             {/* Main Image */}
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-slate-900 border border-white/5">
+            <div className="relative aspect-4/3 rounded-3xl overflow-hidden bg-slate-900 border border-white/5">
               {car.images && car.images.length > 0 ? (
                 <>
                   <Image
